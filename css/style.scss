@@ -1,0 +1,237 @@
+// font face setup
+@font-face {
+    font-family: Roobert;
+    src: url("https://cdn-01.cms-ap-v2i.applyflow.com/af-website/wp-content/themes/af-custom-child/assets/fonts/Roobert-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Roobert;
+    src: url("https://cdn-01.cms-ap-v2i.applyflow.com/af-website/wp-content/themes/af-custom-child/assets/fonts/Roobert-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Roobert;
+    src: url("https://cdn-01.cms-ap-v2i.applyflow.com/af-website/wp-content/themes/af-custom-child/assets/fonts/Roobert-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Roobert;
+    src: url("https://cdn-01.cms-ap-v2i.applyflow.com/af-website/wp-content/themes/af-custom-child/assets/fonts/Roobert-Bold.ttf");
+    font-weight: 700;
+}
+
+$font: Roobert;
+
+// variable
+$color-black: #1E1E1E;
+$color-paragraph: #474747;
+
+$color-primary: #242424;
+$color-primary-hover:#666666;
+$color-secondary: #F86E01;
+$color-secondary-hover: #fa9a4d;
+
+
+// global styling
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+// utilities
+.btn {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 20px 26px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    @media (max-width: 1024px) {
+        font-size: 20px;
+        padding: 16px 20px;
+    }
+
+    &--primary {
+        color: #fff;
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: #666666;
+        }
+    }
+
+    &--secondary {
+        color: #fff;
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: #fa9a4d;
+        }
+    }
+}
+
+// banner styling
+.banner {
+    background-color: #dfdfdf;
+
+    &-title {
+        font-size: 3.375rem;
+        font-weight: 600;
+        color: $color-black;
+        margin-top: 0;
+        margin-bottom: 2rem;
+
+        @media (max-width: 1024px) {
+            font-size: 2.25rem;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $color-paragraph;
+
+        @media (max-width: 1024px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1480px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__inner {
+        padding: 105px 0;
+
+        @media (max-width: 1024px) {
+            padding: 60px 0;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+
+        @media (max-width: 1024px) {
+            flex-flow: column;
+        }
+    }
+
+    &__text {
+        flex: auto;
+    }
+
+    &__btnwrap {
+        display: flex;
+        align-items: center;
+        gap: .5rem 1rem;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    &__callout {
+        position: relative;
+        flex: 0 0 590px;
+        width: 590px;
+        max-width: 100%;
+
+        @media (max-width: 1024px) {
+            flex: initial;
+            order: -1;
+        }
+    }
+
+    &__img {
+        width: 516px;
+        max-width: 90%;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__highlights {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 0;
+        display: flex;
+        flex-flow: column;
+        gap: 12px;
+    }
+
+    &__highlight {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        gap: 12px;
+        max-width: 220px;
+        background-color: #fff;
+        box-shadow: 2px 0 6px rgba(#000, .1);
+        border-radius: 6px;
+
+        @media (max-width: 1024px) {
+            padding: 6px;
+            max-width: 180px;
+        }
+
+        .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 14px 8px;
+            border-radius: 6px;
+            transition: all .3s ease-out;
+
+            @media (max-width: 1024px) {
+                flex: 0 0 45px;
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+
+        .text {
+            flex: auto;
+            font-size: 1.25rem;
+
+            @media (max-width: 1024px) {
+                font-size: 1rem;
+            }
+        }
+
+        &:hover .num {
+            background-color: $color-secondary;
+        }
+    }
+}
